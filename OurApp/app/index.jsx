@@ -1,4 +1,6 @@
-import { Dimensions, StyleSheet, View } from "react-native";
+// import { Link } from "expo-router";
+import { Link } from "expo-router";
+import { Dimensions, StyleSheet, Text, View } from "react-native";
 import MapView, { Marker, Polyline } from "react-native-maps";
 
 export default function App() {
@@ -47,6 +49,8 @@ coordinate:{
 
   return (
     <View style={styles.container}>
+     
+  
       <MapView
         style={styles.map}
         initialRegion={{
@@ -70,6 +74,7 @@ coordinate:{
           strokeWidth={4}
         />
       </MapView>
+        <Link href="/Tabs"><Text>Tabs</Text></Link>
     </View>
   );
 }
@@ -83,6 +88,6 @@ const styles = StyleSheet.create({
   },
   map: {
     width: Dimensions.get("window").width,
-    height: Dimensions.get("window").height,
+    height: 500,
   },
 });
