@@ -1,6 +1,6 @@
 // import { Link } from "expo-router";
 import { Link } from "expo-router";
-import { Dimensions, StyleSheet, Text, View } from "react-native";
+import { Dimensions, StyleSheet, Text, View,Image } from "react-native";
 import MapView, { Marker, Polyline } from "react-native-maps";
 
 export default function App() {
@@ -37,26 +37,24 @@ export default function App() {
     },
 
     {
-id: 5,
-title: "New Friends Colony",
-description: "This is point E",
-coordinate:{
-  latitude: 28.568303416468023,
-  longitude: 77.26943502846393,
-},   
+      id: 5,
+      title: "New Friends Colony",
+      description: "This is point E",
+      coordinate: {
+        latitude: 28.568303416468023,
+        longitude: 77.26943502846393,
+      },
     },
   ];
 
   return (
     <View style={styles.container}>
-     
-  
-      <MapView
+      {/* <MapView
         style={styles.map}
         initialRegion={{
           latitude: 28.56384573530767,
           longitude: 77.28899141180678,
-          latitudeDelta: 2.90,
+          latitudeDelta: 2.9,
           longitudeDelta: 3.89,
         }}
       >
@@ -73,8 +71,9 @@ coordinate:{
           strokeColor="black"
           strokeWidth={4}
         />
-      </MapView>
-        <Link href="/Tabs"><Text>Tabs</Text></Link>
+      </MapView>*/}
+      <Link href="/Tabs">HomeScreen</Link>
+      
     </View>
   );
 }
@@ -82,12 +81,12 @@ coordinate:{
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "red",
+    // backgroundColor: "red",
     alignItems: "center",
     justifyContent: "center",
   },
   map: {
-    width: Dimensions.get("window").width,
-    height: 500,
+    // width: Dimensions.get("window").width,
+    // height: Dimensions.get("window").height,
   },
 });

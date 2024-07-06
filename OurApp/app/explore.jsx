@@ -8,7 +8,7 @@ export default function exploreScreen(){
     <Text>
         Explore Screen
     </Text>
-    <Link href="/Tabs">Navigate to Home</Link>
+    <Link href="/Tabs">Rocky Bhai</Link>
 </View>
     );
 }
