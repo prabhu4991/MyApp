@@ -1,69 +1,72 @@
 import { useState } from "react";
 import {
+  Image,
   ImageBackground,
   Pressable,
   ScrollView,
-  Text
+  Text,
+  View,
 } from "react-native";
-import ViewPager from "react-native-pager-view";
+// import ViewPager from "react-native-pager-view";
 import image1 from "../assets/images/bike2.jpg";
 import image from "../assets/images/photo.jpeg";
+import image2 from "../assets/images/superbike01.jpg";
+import image001 from "../assets/images/newsuper02.jpg";
 export default function Task() {
-  const [color, setColor] = useState(false);
-
-  function handleColor() {
-    setColor(!color);
-  }
-  return (
-
-
-    <ScrollView>
-
-      <ImageBackground source={image} resizeMode="cover">
-        <ImageBackground source={image1} resizeMode="cover">
-          <Pressable onPress={() => handleColor()}>
-            <Text
-              style={{
-                fontSize: 50,
-                color: "yellow",
-              }}
-            >
-              hello
-            </Text>
-          </Pressable>
-
-          <Text
-            style={{
-              textAlign: "center",
-              fontSize: 30,
-              fontWeight: "bold",
-              color: "red",
-            }}
-          >
-            GoodMorning
-          </Text>
-          <Text
-            style={{
-              textAlign: "center",
-              fontSize: 78,
-              fontWeight: "condensed",
-              color: "skyblue",
-            }}
-          >
-            आहिस्ता चल ज़िन्दगी, अभी कई क़र्ज़ चुकाना बाकी है, कुछ दर्द मिटाना बाकी
-            है, कुछ फ़र्ज़ निभाना बाकी है!!. hiii
-          </Text>
-        </ImageBackground>
-      </ImageBackground>
-<ViewPager  style={Styles.container} initalPage={0} ref={page} >
-<View style={({...styles.page}, {backgroundColor:"red"})} key="1">
+  const [top, setTop] = useState(0);
+  const [left, setLeft] = useState(0);
   
 
+  return (
+    <ScrollView>
+      <View
+        style={{
+          height: 50,
+          width: 50,
+          borderRadius: 50,
+          backgroundColor: "red",
+          position: "relative",
+          top: top,
+          left: left,
+        }}
+      ></View>
+<Image source={image001}>
 
 
- 
-</ViewPager>
+      <Pressable
+        onPress={() => {
+          setTop(top + 5);
+        }}
+      >
+        <Text>Top</Text>
+      </Pressable>
+
+      <Pressable
+        onPress={() => {
+          setLeft(left + 5);
+        }}
+      >
+        <Text>Left</Text>
+      </Pressable>
+
+
+      <Pressable
+        onPress={() => {
+          setLeft(left - 5);
+        }}
+      >
+        <Text>Right</Text>
+      </Pressable>
+
+
+      <Pressable
+        onPress={() => {
+          setTop(top -5 );
+        }}
+      >
+        <Text>Bottom</Text>
+      </Pressable>
+      </Image>
     </ScrollView>
-
   );
 }
